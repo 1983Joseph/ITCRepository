@@ -1,0 +1,11 @@
+kturtle-script-v1.0
+@(reset)
+$a= @(ask) "Anun"
+$b= @(ask) "Azganun"
+$c= @(ask) "Hayranun"
+$d= @(ask) "Tariq"
+@(spritehide)
+@(go) 0@(,) 0
+@(print) "Voghjuyn " + $a +" "+ $b + " " + $c
+@(go) 0@(,) 40
+@(print) "duq " + $d + " tarekan eq"

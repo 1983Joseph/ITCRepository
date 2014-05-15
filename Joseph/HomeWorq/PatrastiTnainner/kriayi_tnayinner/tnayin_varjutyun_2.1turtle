@@ -1,0 +1,13 @@
+kturtle-script-v1.0
+@(reset)
+@(canvascolor) 0@(,) 0@(,) 0
+@(pendown)
+@(pencolor) 255@(,) 0@(,) 0
+@(tr) 30
+@(fw) 100
+@(tl) 120
+@(pencolor) 0@(,) 255@(,) 0
+@(fw) 100
+@(tl) 120
+@(pencolor) 255@(,) 100@(,) 0
+@(fw) 100

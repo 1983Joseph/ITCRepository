@@ -1,0 +1,20 @@
+__MAKE__and__MAKEFILE__
+
+PAHANJ@__make utilitayi mijocov kazmakerpel .cpp ev .hpp fileri build proces@:
+
+Arajadranq@ katarvac e tarber astichani bardutyunnerov.
+
+1: unecac src/.cpp ev header/.hpp ev makefile@ gtnvum en nujn katalogum, makefi|
+le@ chi parunakum popoxakanner.
+2: nuyn@ miajn en tarberutyamb vor makefile@ grvac e popoxakannerov.
+3: ajstex arden make hramani ardyunqum arajacox .o ev exe fileer@ texadrvum en |
+naxoroq stexcvac /obj ev /bin katalognerum.
+4: nujn@ miajn en tarberutyamb vor /obj ev /bin katalogner@ stexcvum en avtomat|
+ev nranc mej texadrum@ nujnpes katarvum e avtomat.
+4_dep: nujn@ miajn en tarberubyamb vor kaxvacutyunner@ include en arvum .dep fi|
+lic.
+5: ajs tarberakum 4: tarberaki himan vra lucvac e mek ajl xndir.Goyutyun unecox|
+.cpp file@ build e arvum ajpes vor .cpp um grvac "kuku" bari poxaren tpvi mek u|
+rish artahajtutyun ev .cpp um trvac 10 angami poxaren, mek ajl qanakov.
+
+Ardjunqner@ tesnelu hamar nax petq e qshvi make hraman@ isk heto exener@.

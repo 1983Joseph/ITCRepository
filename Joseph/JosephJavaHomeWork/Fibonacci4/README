@@ -1,0 +1,24 @@
+-------------------------JosephJavaHomeWork-8----------------------------------
+
+--Handznararvac er voroshel Fibonaccii arajin tar@ vor@ uni 1000 nish.
+
+--Xndri hnaravor lucman tarberakn e Java lezvov kazmel cragir, vor@ sksac 1-c |
+hertakanutyamb kvoroshi Fibonaccii tarer@, dranc veragrelov "ArrayList" standar|
+classi objekti andamnerin, ev ajdpes ksharunaki voroshel tarer@ menchev vor |
+gojutjun unin ciklum drvac pajman@` ajsinqn minchev vor Fibonacci tiv@ poqr e |
+"10"-i "999"astichanic.Parz e vor ete ajd tiv@ mec exni "999"astichanic, apa|
+nra nisheri tiv@ klini "1000" ev aveli.|
+Evs mek voroshum vori masin hark e nshel, qani vor cragrum gorc unenq shat mec|
+tveri het, voronc hnaravor che bnutagrel voch mi sovorakan tvjali tipov,|
+ajd isk patcharov es ajd tver@ pahox popoxakan@ nkaragrelus ogtvel em Java.math standart classneric` "BigInteger" classic ev ajd classi metodneric.
+Xndri chisht ashxatanqi stugman nkatarumneric elnelov, cragir@ hashvum e naev |
+aveli poqr michakajqeri hamar, vorpeszi veradardzvac arjeqneric hnaravor lini |
+gnahatel cragri ashxatanqi chshtutyun@.
+--------------------------------------------------------------------------------Inch e harkavor cragir@ ashxatacnelu hamar`
+1.java ev JVM
+2.make
+-------------------------------------------------------------------------------
+INCHPES ASHXATACNEL CRAGIR@`
+1.ajn katalogum vortex gtnvum e "makefile" , qshel "make" hraman@.
+2.nujn katalogum qshel "make run" hraman@.
+3.compilaciajic arajacac "*.class" filer@ jnjelu hamar qshel "make clean" hraman

@@ -1,0 +1,26 @@
+#####Readme TMP#####
+
+
+
+#in desktop add
+
+mkdir TMP
+
+#in /home/usr   add script "TMP.sh"
+#"TMP.sh" permission 777
+
+
+########TMP.sh######
+
+#!/bin/bash
+DESKTOP=$HOME/Desktop
+
+rm -r $Desktop/TMP
+mkdir $Desktop/TMP
+cd $Desktop
+chmod 777 TMP
+chown $USER TMP
+
+#for this we need to add /etc/rc.local line
+
+sh /home/usr/TMP.sh

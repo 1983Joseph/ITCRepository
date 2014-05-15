@@ -1,0 +1,17 @@
+#--------------MYSVN-VERSION-1-----------
+
+#Tnajin ashxatanqi pahanjn er grel subversion-SVN
+
+#Xndir@ lucvac e masamb!!!
+
+
+#1.scriptneri ashxatanqi hamar anhrajesht e install "inotify-tools".
+#2.SVN_SERVER ev SVN_CLIENT katalogner@ texadrel tarber katalognerum.
+#3.mi terminalic cd exnel SVN_SERVER katalogi mech ev qshel "bash scv.sh" |
+hraman@.
+#4.erkrord terminalic cd exnel SVN_CLIENT katalog ev qshel "bash svn_client.sh"|
+hraman@.
+#5."svn_client.sh" script@ interaktiv e , harkavor e hetevel cucumnerin ev |
+porcel ashxatacnel ayn.
+
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -f $1 ] #PATH insert 
+then echo "regular file" #identify this file
+else
+if [ -d $1 ] #identify this directory
+then
+cd "$1"     
+ echo "it is directory -"
+ echo "directory - `ls -l | grep "^d"| wc -l`" #identify count file in dir.
+ echo "file - `ls -l | grep "^-"| wc -l`" ##identify count dir. in dir.
+fi
+fi
+

@@ -1,0 +1,25 @@
+kturtle-script-v1.0
+@(reset)
+@(canvascolor) 0@(,) 0@(,) 0
+@(penwidth) 3
+@(tl) 20
+@(repeat) 6 {
+@(tl) 60
+
+@(pencolor) 0@(,) 0@(,) 0 
+@(forward) 20
+
+@(pencolor) 202@(,) 0@(,) 0 
+@(forward) 20
+
+@(pencolor) 255@(,) 255@(,) 0 
+@(forward) 20
+
+@(pencolor) 83@(,) 48@(,) 142 
+@(forward) 20
+
+@(pencolor) 0@(,) 145@(,) 0 
+@(forward) 20
+
+@(go) 200@(,) 200
+}

@@ -1,0 +1,12 @@
+#!/bin/bash
+#sed -e "s/[0-9]//ig" < A >> :g
+#sed -e "s/#*//" -e "/./!d" < tnajin > tnajin1
+#sed -e "s/E*//" < tnajin > tnajin1
+#grep -e "[0-9]" < A >> :g
+
+
+#grep -rh A* ./ > /home/karayan/Desktop/tnajin
+#sed -i 's/\s*#.*//' style.txt
+#grep -v "^$" style.txt >template.txt
+#sed -e "s/[a-z]/ /ig" -e "/./!d" < A > g
+grep -P -o "[0-9]+" A.txt > g.txt

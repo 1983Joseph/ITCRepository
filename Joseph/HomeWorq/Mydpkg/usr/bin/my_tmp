@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -r /home/tmp2
+mkdir /home/tmp2
+sudo chmod 777 /home/tmp2

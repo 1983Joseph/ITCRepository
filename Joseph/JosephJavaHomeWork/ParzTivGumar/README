@@ -1,0 +1,26 @@
+-------------------------JosephJavaHomeWork-4-----------------------------------
+
+--Handznararvac er hashvel parz tveri gumar@ voronq poqr en erku millionic.
+
+--Xndri hnaravor lucman tarberakn e Java lezvov kazmel cragir, vor@ nax|
+kvoroshi ajd mijakajqi parz tver@ ev dranc mek@ mjusin gumarelu chanaparhov,|
+kvoroshi 2000000-ic poqr parz tveri gumar@. Xndri lucman mech ogtagorcel em |
+voroshaki optimizacia, ajsinqn parz tveri voroshman ciklum, qajleri qanak@ |
+sahmanapakel em "i*i<j" pajman@, vor@ tujl e tvel mi qani angam aragacnel |
+cragri ashxatanq@. Evs mek voroshum vori masin hark e nshel, qani vor tvjal |
+michakajqi parz tveri gumar@ bavakanin mec tiv e, vor@ hnaravor che bnutagrel|
+voch mi sovorakan tvjali tipov, ajd isk patcharov es ajd tiv@ pahox popoxakan@ |
+nkaragrelus ogtvel em Java.math standart classneric` "BigInteger" classic |
+ev cragrum parz tveri gumar@ pahvum e ajd classi objekti tesqov.
+Xndri chisht ashxatanqi stugman nkatarumneric elnelov, cragir@ hashvum e naev |
+aveli poqr michakajqeri hamar, vorpeszi veradardzvac arjeqneric hnaravor lini |
+gnahatel cragri ashxatanqi chshtutyun@.
+-------------------------------------------------------------------------------
+Inch e harkavor cragir@ ashxatacnelu hamar`
+1.java ev JVM
+2.make
+-------------------------------------------------------------------------------
+INCHPES ASHXATACNEL CRAGIR@`
+1.ajn katalogum vortex gtnvum e "makefile" , qshel "make" hraman@.
+2.nujn katalogum qshel "make run" hraman@.
+3.compilaciajic arajacac "*.class" filer@ jnjelu hamar qshel "make clean" hraman

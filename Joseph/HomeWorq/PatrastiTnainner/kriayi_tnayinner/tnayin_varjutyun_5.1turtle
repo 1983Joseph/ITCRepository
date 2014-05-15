@@ -1,0 +1,13 @@
+kturtle-script-v1.0
+@(reset)
+$koxm= 10
+@(pc) 255@(,) 100@(,) 255
+@(penwidth) 5
+@(tl) 60
+@(spritehide)
+@(repeat) 20
+{
+@(tr) 120
+@(fw) $koxm 
+$koxm= ($koxm + 10)
+}

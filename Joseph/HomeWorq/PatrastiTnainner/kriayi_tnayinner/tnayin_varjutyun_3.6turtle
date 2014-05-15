@@ -1,0 +1,11 @@
+kturtle-script-v1.0
+
+@(reset)
+@(tl) 90 
+$n= @(ask) "n"
+$ankyun= 360/$n
+@(repeat) $n
+{
+@(fw) 20
+@(tr) $ankyun
+}

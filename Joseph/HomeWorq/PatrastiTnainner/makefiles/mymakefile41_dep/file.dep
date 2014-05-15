@@ -1,0 +1,1 @@
+barev.o: src/barev.cpp src/../header/barev.hpp

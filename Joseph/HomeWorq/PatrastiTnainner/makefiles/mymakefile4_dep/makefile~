@@ -1,0 +1,15 @@
+HEADERS :=$(wildcard header/*.hpp)
+SOURCE :=$(wildcard src/*.cpp)
+OBJECTS :=$(patsubst src/%.cpp,obj/%.o,$(SOURCE))
+EXE :=$(addprefix bin/,program)
+CC := g++
+BINDIR =:bin
+OBJDIR =:obj
+$(BINDIR) :
+mkdir bin
+$(EXE) : $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(EXE)
+$(OBJECTS) : $(SOURCE) $(HEADERS) | > $(OBJDIR)
+	    $(CC) -c $(SOURCE) -o $(OBJECTS)
+clear:
+	rm -r obj bin

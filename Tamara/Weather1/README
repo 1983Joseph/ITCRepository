@@ -1,0 +1,24 @@
+This is  a  README file for weather report program.
+
+Content
+1.Author
+2.Introduction
+
+Author
+ITC
+Tamara Avagyan
+
+Introduction
+
+This is a program  which  returns    report about weather. The program  is written  in  Java  programming  language.
+If  you   work    with  vim you need to  compile java  files before running  the program:
+         javac   WeatherMain.java
+After this you need write this command:
+	java WeatherMain
+We get following data as  a  result of the program:
+
+	-expected    weather
+	-day    temperature
+	-night temperature
+	-relative  humidity
+

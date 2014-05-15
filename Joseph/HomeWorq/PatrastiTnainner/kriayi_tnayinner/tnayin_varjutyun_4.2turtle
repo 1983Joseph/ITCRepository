@@ -1,0 +1,13 @@
+kturtle-script-v1.0
+@(reset)
+$a= @(ask) "a"
+$b= @(ask) "b"
+$max=0
+@(spritehide)
+@(if) $a == $b {
+@(go) 0@(,) 0
+@(print) "duq nereqmuce nuyn tiv@"} @(else){
+@(if) $a > $b {$max= $a} @(else) {$max= $b}
+@(go) 0@(,) 0
+@(print) "max= " + $max
+}

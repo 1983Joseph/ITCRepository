@@ -1,0 +1,46 @@
+kturtle-script-v1.0
+@(reset)
+@(spritehide)
+$count=0
+$max=0
+$min=0
+$sum=0
+$mult=1
+$avg=0
+$a=0
+$dirq=20
+$a=@(ask) "tiv"
+@(while) ($a >= 0) 
+{
+  @(go) 300@(,) $dirq
+  @(print) +$a
+  $dirq=$dirq+20
+  $count=$count+1
+  $sum=$sum+$a
+  $mult=$mult*$a
+  @(if) ($count == 1 @(or) $a < $min) {
+    $min=$a
+  }
+  @(if) ($a > $max) {
+    $max=$a
+  }
+  $a= @(ask) "tiv"
+}# while cikli avart
+@(if) ($count == 0) {
+  @(go) 0@(,) 20
+  @(print) "duq tiv cheq mutqagrel" 
+  @(exit)
+}
+$avg=$sum/$count
+@(go) 0@(,) 0
+@(print) "mutqagrac tveric max= " + $max
+@(go) 0@(,) 20
+@(print) "mutqagrac tveric min= " + $min
+@(go) 0@(,) 40
+@(print) "mutqagrac tveri gumar@ sum= " + $sum
+@(go) 0@(,) 60
+@(print) "mutqagrac tveri artadryal@ mult= " + $mult
+@(go) 0@(,) 80
+@(print) "mutqagrac tveri mijin@ avg= " + $avg
+@(go) 0@(,) 100
+@(print) "mutqagrac tveri qanak@ count= " + $count

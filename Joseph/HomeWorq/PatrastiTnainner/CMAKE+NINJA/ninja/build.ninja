@@ -1,0 +1,3 @@
+rule exec
+   command = g++ $in -o $out
+build exe : exec file.cpp

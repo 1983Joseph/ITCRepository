@@ -1,0 +1,3 @@
+#!/bin/bash
+SET(OS_WINDOWS FALSE)
+SET(OS_LINUX FALSE)

@@ -1,0 +1,9 @@
+kturtle-script-v1.0
+@(reset)
+@(penup)
+@(repeat) 60
+{
+@(tl) 6
+@(fw) 8
+@(print) @(rnd) 5@(,) 9
+}

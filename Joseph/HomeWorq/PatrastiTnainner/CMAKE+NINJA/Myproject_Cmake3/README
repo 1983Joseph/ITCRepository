@@ -1,0 +1,25 @@
+------------Myproject Cmake------------
+
+Tnajin ashxatanq@ hetevjaln er` mer unecac .cpp fajli build process@ |
+kazmakerpel Cmake Build Process Configuratori mijocov , erkrord mas@` 
+
+Proekti armatajin directorian karucel em Cmake proektneri @ndunvac kargov` |
+1.src_dir----mer himnakan .cpp, .hpp faileri hamar
+2.lib_dir----proektin linking arvor gradaranneri hamar
+3.include_dir---publik .hpp hamar
+4.bin_dir----ctacvor binar fileri hamar
+5.bulid_dir----cragir@ havaqvum e ays directoriaji mech
+6.README---vor@ hima @ntercum enq
+7.Chengelog---hetagajum popoxutyunneri masin nshumneri hamar
+8.NEWS---grete naxordi nman 
+9.AUTHOTS
+10.COPYING
+11.INSTALL---install instrukcia
+12.config.h.in
+
+Cragir@ havaqelu hamar build directoriaic qshum enq "cmake .." hraman@ , |
+@ntacqum ditum enq progres@ , cmake@ havaqum e mer proekt@ ev nuyn katalogum |
+stanum enq "Makefile" , nujn texic qshum enq "make" hraman@ ev verjapes  |
+ardyunqum bin_diri mech kunenanq "myproject" katarox file , nuyn diri mech |
+en popoxutyan entarkvox .txt filer@ , cragri ashxatacnelu hamar bin_diric |
+qshum enq "./myproject" hraman@ ev verj cragir@ ashxatec. 

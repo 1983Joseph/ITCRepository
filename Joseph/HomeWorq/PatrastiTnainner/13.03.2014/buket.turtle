@@ -1,0 +1,132 @@
+kturtle-script-v1.0
+@(reset)
+@(spritehide)
+@(cs) 600@(,) 600
+@(learn) caxik $n {
+  @(learn) bazmankyun $n {
+    @(penwidth) 5
+    @(pc) 255@(,) 0@(,) (@(rnd) 0@(,) 255)
+    $koxm= 5
+    $ankyun= 60
+    @(repeat) $n {
+      @(tr) $ankyun
+      @(fw) $koxm 
+      $koxm = ($koxm + 5)
+    }
+  }
+  @(repeat) 8 {
+    @(tl) 15
+    bazmankyun 7
+  }
+}
+@(learn) bantik2 $n {
+    @(tr) 49
+    @(pc) (@(rnd) 0@(,) 255)@(,) (@(rnd) 0@(,) 125)@(,) (@(rnd) 0@(,) 200)
+    @(pw) 6
+    $gic = 25
+    $ankyun = 21.8
+    @(repeat) 6 {
+      @(fw) $gic
+      $gic=($gic-5)
+      @(tr) $ankyun
+    }
+    @(repeat) 7 {
+      @(fw) $gic
+      $gic = ($gic+5)
+      @(tr) $ankyun
+    }
+  }
+
+@(learn) caxikner $x@(,) $y {
+  @(go) $x@(,) $y
+  @(repeat) 16 {
+    @(tr) 50
+    bantik2 1
+  }
+}
+@(learn) bantik1 $n {
+    @(tr) 49
+    @(pc) 255@(,) (@(rnd) 0@(,)132)@(,) (@(rnd) 0@(,) 200)
+    @(pw) 6
+    $gic = 35
+    $ankyun = 21.8
+    @(repeat) 6 {
+      @(fw) $gic
+      $gic = ($gic-5)
+      @(tr) $ankyun
+    }
+    @(repeat) 7 {
+      @(fw) $gic
+      $gic = ($gic+5)
+      @(tr) $ankyun
+    }
+  }
+@(learn) caxikner1 $x@(,) $y {
+  @(go) $x@(,) $y
+  @(repeat) 16 {
+  @(tr) 50
+  bantik1 1
+  }
+}
+@(learn) bantik $n {
+  @(tr) 49
+  @(pc) 255@(,) 0@(,) 0
+  @(pw) 6
+  $gic = 35
+  $ankyun = 21.8
+  @(repeat) 6 {
+    @(fw) $gic
+    $gic = ($gic-5)
+    @(tr) $ankyun
+  }
+  @(repeat) 7 {
+    @(fw) $gic
+    $gic = ($gic+5)
+    @(tr) $ankyun
+  }
+}
+@(pw) 5
+@(pc) 0@(,) 255@(,) 0
+@(go) 300@(,) 600
+@(fw) 250
+@(go) 300@(,) 450
+@(tl) 25
+@(fw) 200
+@(go) 300@(,) 450
+@(tr) 30
+@(fw) 250
+@(go) 300@(,) 350
+@(tl) 60
+caxik 1
+caxikner1 200@(,) 230
+caxikner1 240@(,) 110
+caxikner 300@(,) 250
+caxikner 250@(,) 150 
+@(go) 300@(,) 450
+@(tr) 60
+bantik 1
+@(tl) 150
+bantik 1
+@(repeat) 3 {
+  @(fw) 40
+  @(tr) 10
+}
+@(tr) 170
+@(repeat) 3 {
+  @(fw) 40
+  @(tl) 10
+}
+@(tl) 120
+@(repeat) 3 {
+  @(fw) 40
+  @(tl) 10
+}
+@(pc) 0@(,) 255@(,) 0
+
+
+
+
+
+
+
+

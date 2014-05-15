@@ -1,0 +1,128 @@
+forward x 
+backward x 
+trunleft x 
+turnright x 
+direction x 
+center
+go x, y
+gox x
+goy y
+
+spriteshow
+spritehide
+
+
+getx
+gety
+
+penup
+pendown
+
+penwidth x
+pencolor r, g, b
+
+print x
+
+fontsize x
+
+canvassize x, y
+canvascolor r, g, b
+reset
+clear
+
+round x 
+sqrt x
+pi
+sin x
+...
+arcsin x
+...
+message x
+ask x
+
+$
+
+wait x
+
+
+reset
+canvascolor 0, 0, 0
+pendown
+pencolor 255, 0, 0
+tr 30
+fw 100
+tl 120
+pencolor 0, 255, 0
+fw 100
+tl 120
+pencolor 255, 100, 0
+fw 100
+
+
+reset
+canvascolor 132, 132, 132
+pencolor 255, 0, 0
+fw 100
+tl 90
+fw 100
+tl 90
+fw 100
+tl 90
+fw 100
+go 150, 150
+pencolor 255, 255, 255
+tr 30
+fw 40
+tl 120
+fw 40
+tl 120
+fw 40
+
+
+reset
+canvascolor 0, 0, 0
+pencolor 255, 0, 0
+fw 150
+tl 145
+pencolor 0, 255, 0
+fw 150
+tl 145
+pencolor 0, 0, 255
+fw 150
+tl 145
+pencolor 0, 100, 100
+fw 150
+tl 145
+pencolor 100, 0, 150
+fw 150
+
+
+reset
+penwidth 4
+penup
+fw 20
+pendown
+pencolor 255, 0, 0
+fw 30
+pencolor 0, 255, 0
+fw 30
+pencolor 0, 255, 255
+fw 30
+pencolor 0, 0, 255
+fw 30
+go 200, 200
+penup
+fw 20
+pendown
+tl 60
+pencolor 255, 0, 0
+fw 30
+pencolor 0, 255, 0
+fw 30
+pencolor 0, 255, 255
+fw 30
+pencolor 0, 0, 255
+fw 30
+go 200, 200
+
+

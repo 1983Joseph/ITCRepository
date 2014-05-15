@@ -1,0 +1,7 @@
+kturtle-script-v1.0
+@(reset)
+@(fw) 100
+@(tl) 120
+@(fw) 200
+@(tl) 150
+@(fw) 172

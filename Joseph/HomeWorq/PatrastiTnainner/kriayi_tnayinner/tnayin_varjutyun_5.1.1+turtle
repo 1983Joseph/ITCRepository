@@ -1,0 +1,22 @@
+kturtle-script-v1.0
+@(reset)
+@(spritehide)
+@(learn) bazmankyun $n {
+@(penwidth) 5
+$koxm= 5
+$ankyun= 360/$gagat
+@(repeat) $n
+{
+@(tr) $ankyun
+@(fw) $koxm 
+$koxm= ($koxm + 10)
+}
+}
+$gagat= @(ask) "gagatneri tiv@"
+$n= @(ask) "n"
+bazmankyun $n
+
+
+
+
+

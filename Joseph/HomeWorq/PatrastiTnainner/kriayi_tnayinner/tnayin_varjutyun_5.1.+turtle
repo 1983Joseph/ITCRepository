@@ -1,0 +1,19 @@
+kturtle-script-v1.0
+@(reset)
+@(spritehide)
+@(learn) patker $x{
+@(pc) 255@(,) 100@(,) 255
+@(penwidth) 5
+@(tl) 60
+$koxm= 10
+@(repeat) $x
+{
+@(tr) 120
+@(fw) $koxm 
+$koxm= ($koxm + 10)
+}
+}
+@(repeat) 5{
+@(go) (@(rnd) 0@(,)400)@(,)(@(rnd) 0@(,)400)
+patker 20
+}

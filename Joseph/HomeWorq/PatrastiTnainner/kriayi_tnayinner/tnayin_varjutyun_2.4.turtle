@@ -1,0 +1,18 @@
+kturtle-script-v1.0
+@(reset)
+@(canvascolor) 0@(,) 0@(,) 0
+@(learn) nkarel $r@(,) $g@(,) $b {
+@(pencolor) $r@(,) $g@(,) $b@(,)
+@(fw) 30
+}
+@(tl) 20
+@(penwidth) 4
+@(repeat) 6{
+nkarel 0@(,) 0@(,) 0
+nkarel 202@(,) 0@(,) 0 
+nkarel 255@(,) 255@(,) 0 
+nkarel 83@(,) 48@(,) 142 
+nkarel 0@(,) 145@(,) 0 
+@(go) 200@(,) 200
+@(tl) 60
+}
