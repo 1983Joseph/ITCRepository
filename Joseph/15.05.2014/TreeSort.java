@@ -35,15 +35,21 @@ interface carovShrjox {  //cari gagatnerov ancnox interfeys
     public void aycelel(Car gagat);//interfejsi miak metod@
 };
 
-class TesGagat  implements carovShrjox {//cari gagatner@ artaberox class
+class TesGagat implements carovShrjox {//cari gagatner@ artaberox class
     public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
-        System.out.print( " " + gagat.banali );//carovShrjox interfeysic
+                                         //carovShrjox interfeysic
         Writefile grox = new Writefile();
         try {
             grox.write( " "+ gagat.banali );
         }
         catch (IOException e) {
         }
+    }
+}
+
+class TpelGagat implements carovShrjox {//cari gagatner@ artaberox class
+    public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
+        System.out.print( " " + gagat.banali );//carovShrjox interfeysic
     }
 };
 
@@ -59,12 +65,19 @@ class Writefile {
 
 class TreeSort {          //sortavorox class Treesort
     public static void main(String args[]) {
-        int p;
-        Car norCar = new Car(((int)(Math.random() * 101) - 50));//car classi konstruktori kanch
-        for (int i = 0; i < 100; i++) {
-            p = ((int)(Math.random() * 101) - 50);
-            norCar.gagatAvelacnel( new Car( p ) );
+	Scanner nor = new Scanner(System.in);
+	int chap;
+	System.out.print("mutqagreq sortavorvox tveri qanak@: ");
+	chap = nor.nextInt();
+	int[] tver = new int[chap];
+        for (int i = 0; i < chap; i++) {
+            tver[i] = ((int)(Math.random() * chap) - (chap/2));
         }
+	Car norCar = new Car(tver[0]);
+	for (int i = 1; i < tver.length; i++) {
+            norCar.gagatAvelacnel( new Car(tver[i]) );
+	}
         norCar.qayl(new TesGagat());
     }
 }
+//        Car norCar = new Car(((int)(Math.random() * 500000) - 250000));//car classi konstruktori kanch
