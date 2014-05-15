@@ -38,20 +38,22 @@ interface carovShrjox {  //cari gagatnerov ancnox interfeys
 class TesGagat  implements carovShrjox {//cari gagatner@ artaberox class
     public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
         System.out.print( " " + gagat.banali );//carovShrjox interfeysic
+        Writefile grox = new Writefile();
+        try {
+            grox.write( " "+ gagat.banali );
+        }
+        catch (IOException e) {
+        }
     }
 };
 
 class Writefile {
 
-    public Writefile(String[] args) {
-    }
-
-    public String write(String[] args) throws IOException {
+    public void write(String tox) throws IOException {
         File flt = new File("TreeSort.txt");
-     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(flt)));
-        out.print(" ");
-        out.flush();
-        return " ";
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(flt,true)));
+        out.print(tox);
+        out.close();
     }
 };
 
@@ -64,6 +66,5 @@ class TreeSort {          //sortavorox class Treesort
             norCar.gagatAvelacnel( new Car( p ) );
         }
         norCar.qayl(new TesGagat());
-//        Writefile o1 = new Writefile();
     }
 }
