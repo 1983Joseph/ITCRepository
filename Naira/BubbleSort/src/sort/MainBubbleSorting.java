@@ -1,77 +1,121 @@
-//package sort;
+package sort;
 
 import java.util.Scanner;
 
 public class MainBubbleSorting {
 
 	static Scanner input_number = new Scanner(System.in);
-	static String number = input_number.next();
+	static int number = input_number.nextInt();;
 	static int middle;
-   static String c;
-	static int t = 1;
-	static int y=0;
-	static int[] arr={2,3,5,6,7,8,9,14,18,25};
-	static MainBubbleSorting  h=new MainBubbleSorting ();
-	
+	static int y = 0;
+	static int sort_count;
+	static MainBubbleSorting h = new MainBubbleSorting();
+
 	public static void main(String[] args) {
-			// TODO Auto-generated method stub
-		buble_sort(args);
-		while(y<arr.length){
-			if(arr[y]!=Integer.parseInt(args[y])){
-				System.out.print("Find error in this index"+ y);
-			}
-			y++;
-		}
-		binary_search(args, number);
+		System.out.print("number: ");
+		
+		// TODO Auto-generated method stub
+		bubbleSort(parse_int(args));
+		printBubbleSort(bubbleSort(parse_int(args)));
+		choseSearchMetod(bubbleSort(parse_int(args)));
 
 	}
 
-	public static String[] buble_sort(String[] args) {
-		
+	private static void printBubbleSort(int[] args) {
+		System.out.print("---BUBBLE SORT---"+"\n");
+		for (int f = 0; f < args.length; f++) {
+			System.out.print(args[f] + " ");
+		}
+		System.out.print("\n" + "----------------" + "\n" + "sort counts="
+				+ sort_count + "\n");
+	}
+
+	public static int[] parse_int(String[] a) {
+
+		int intarray[] = new int[a.length];
+		for (int i = 0; i < a.length; i++) {
+			intarray[i] = Integer.parseInt(a[i]);
+		}
+		return intarray;
+
+	}
+
+	public static int[] bubbleSort(int[] args) {
+		int c;
 		int j;
-		while (t == 1) {
-			for (int f = 0; f < args.length; f++) {
-				System.out.print(args[f] + " ");
-			}
-			t = 0;
+		sort_count = 0;
+		boolean t = true;
+		while (t == true) {
+
+			t = false;
 			j = 0;
 
 			for (int i = 1; i < args.length - j; i++) {
-				if (Integer.parseInt(args[i - 1]) > Integer.parseInt(args[i])) {
-					t = 1;
-					c =args[i - 1];
+				if (args[i - 1] > args[i]) {
+					t = true;
+					c = args[i - 1];
 					args[i - 1] = args[i];
-					args[i] =c;
-					j++;
+					args[i] = c;
+					j = i;
 				}
+				sort_count++;
 			}
 
-			System.out.print("\n");
 		}
 
 		return args;
 	}
 
-	public static void binary_search(String[] args, String number) {
-		System.out.print("\n");
-		int ep = args.length-1;
+	public static int binarySearch(int[] args, int number) {
+		int ep = args.length - 1;
 		int bp = 0;
-		while (ep > bp) {
-			middle = (int) (ep+ bp) / 2;
-			if (Integer.parseInt(number) == Integer.parseInt(args[middle])) {
-				System.out.println("This number index is found  "+middle);
-				return;
-			} else if (Integer.parseInt(number) > Integer
-					.parseInt(args[middle])) {
+		while (ep >= bp) {
+			middle = (int) (ep + bp) / 2;
+			if (number == args[middle]) {
+				return middle;
+			} else if (number > args[middle]) {
 				bp = middle + 1;
-			} else if (Integer.parseInt(number) < Integer
-					.parseInt(args[middle])) {
+			} else if (number < args[middle]) {
 				ep = middle - 1;
 
 			}
 
 		}
-		System.out.println("-1");
+		return -1;
 	}
-	
+
+	private static int rekursivBinarySearch(int[] args, int number, int bp,
+			int ep) {
+		// TODO Auto-generated method stub
+		middle = (int) (ep + bp) / 2;
+		while (ep > bp) {
+			if (number == args[middle]) {
+				return middle;
+			} else if (number > args[middle]) {
+				rekursivBinarySearch(args, number, middle + 1, ep);
+			} else {
+				rekursivBinarySearch(args, number, bp, middle - 1);
+			}
+
+		}
+		return -1;
+	}
+
+	public static void choseSearchMetod(int[] args) {
+		System.out.println("Choes 1 2");
+		int chose = input_number.nextInt();
+		if (chose == 1) {
+			binarySearch(bubbleSort(args), number);
+			System.out.println("This is BinarySearch"+"\nThis number index is found  "
+					+ binarySearch(args, number));
+		} else if (chose == 2) {
+			int ep = args.length - 1;
+			int bp = 0;
+			rekursivBinarySearch(args, number, bp, ep);
+			System.out.println("This is RecursivBinarySearch"+"\nThis number index is found  "
+					+ rekursivBinarySearch(args, number, bp, ep));
+		}
+
+	}
+
 }
