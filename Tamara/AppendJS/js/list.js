@@ -4,6 +4,7 @@ var li;
 function addItem(){
     var ul=document.getElementById("ulID");
     var select=document.getElementById("selID");
+    if (document.getElementById("inID").value !="" ) {
     li=document.createElement("li");
     var option=document.createElement("option");
     li.appendChild(document.createTextNode(document.getElementById("inID").value));
@@ -12,6 +13,7 @@ function addItem(){
     select.appendChild(option);
     a.push(document.getElementById("inID").value);
     clear();
+}
 }
 function clear(){
     document.getElementById("inID").value="";
