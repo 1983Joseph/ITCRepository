@@ -15,9 +15,9 @@ public class ReadFile {
             System.out.println("ошибка " + e); 
         }
         for(int k=0; k < nor.size(); k++) {
-            //   k=scanner.nextInt();
             System.out.println( "tiv" + nor.get(k));
         }
     }
 
 }
+            //   k=scanner.nextInt();
