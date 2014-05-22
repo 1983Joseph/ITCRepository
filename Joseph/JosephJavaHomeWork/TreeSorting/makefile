@@ -1,8 +1,8 @@
 SOURCE=*.java
 compiler=javac
 output=*.class
-classfile=BinarySearch.class
-exefile=BinarySearch
+classfile=TreeSort.class
+exefile=TreeSort
 interpretator=java
 
 compile: $(SOURCE)
