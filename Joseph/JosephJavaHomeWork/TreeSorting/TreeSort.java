@@ -27,7 +27,17 @@ class Car {
         }
     }
 
-    public void qayl(carovShrjox aycelvoxGagat) {//car classi metod, vor@ 
+    public void qayl(TpelGagat aycelvoxGagat, String filename) {//car classi metod, vor@ 
+        if ( dzax != null) {               //carShrjox interfeysi mijocov ev 
+            dzax.qayl( aycelvoxGagat, filename ); //binar cari kanonneri hamadzayn  
+        }                               //ancnume e cari gagatneri vrayov 
+        aycelvoxGagat.aycelel(this, filename );
+        if ( aj != null ) { 
+            aj.qayl( aycelvoxGagat, filename );
+        }
+    }
+
+    public void qayl(TesGagat aycelvoxGagat) {//car classi metod, vor@ 
         if ( dzax != null) {               //carShrjox interfeysi mijocov ev 
             dzax.qayl( aycelvoxGagat ); //binar cari kanonneri hamadzayn  
         }                               //ancnume e cari gagatneri vrayov 
@@ -38,24 +48,23 @@ class Car {
     }
 }
 
-interface carovShrjox {  //cari gagatnerov ancnox interfeys
+class TpelGagat {
 
-    public void aycelel(Car gagat);//interfejsi miak metod@
-};
-
-class TpelGagat implements carovShrjox {//cari gagatner@ artaberox class
-
-    public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
-        ArrayList <Integer> carArray = new ArrayList();//carovShrjox interfeysic
-        carArray.add(gagat.banali);
+    public void aycelel(Car gagat, String filename) {
+        Writefile grox = new Writefile();
+        try {
+            grox.write( " "+ gagat.banali, filename );
+        }
+        catch (IOException e) {
+        }
     }
 
 }
 
-class TesGagat implements carovShrjox {//cari gagatner@ artaberox class
+class TesGagat {
 
-    public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
-        System.out.print( " " + gagat.banali );//carovShrjox interfeysic
+    public void aycelel(Car gagat) {
+        System.out.print( " " + gagat.banali );
     }
 };
 
@@ -107,18 +116,20 @@ class Zangvac {
     }
 }
 
-class TreeSort {//sortavorox class Treesort
+class TreeSort {
 
     public static void main(String args[]) {
         ArrayList <Integer> norArray = new ArrayList();
         Scanner norScanner = new Scanner(System.in);
-        System.out.print("mutqagreq massivi chap@: ");
+        System.out.print("mutqagreq zangvaci chap@: ");
         int chaps = norScanner.nextInt();
-        System.out.print("mutqagreq filename vortex petq e grvi massiv@: ");
+        System.out.print("mutqagreq filename vortex petq e grvi zangvac@: ");
         String filename1 = norScanner.next();
         int[] tiviMassiv = Zangvac.massiv(chaps, filename1);
-        System.out.print("mutqagreq filename vortexic petq e vercrvi massiv@: ");
+        System.out.print("mutqagreq filename vortexic petq e vercrvi zangvac@: ");
         String filename2 = norScanner.next();
+        System.out.print("mutqagreq filename vortex petq e grvi sortavorvac zangvac@: ");
+        String filename3 = norScanner.next();
         try {
             norArray = Read.read(filename2);
         } catch (IOException e) {
@@ -131,14 +142,7 @@ class TreeSort {//sortavorox class Treesort
         }
         Writefile grox = new Writefile();
         norCar.qayl(new TesGagat());
-        for(int k=0; k < carArray.size(); k++) {
-            try {
-                grox.write( " "+ carArray(k), filename );
-            }
-            catch (IOException e) {
-            }
-        }
-        //norCar.qayl(new TpelGagat());
+        norCar.qayl(new TpelGagat(), filename3);
         System.out.print("\n");
     }
 }
