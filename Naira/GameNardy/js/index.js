@@ -1,3 +1,5 @@
+var zar={"zarimg":[{"srcimg":'images/zar1.png',"imgindex":1},{"srcimg":'images/zar2.png',"imgindex":2},{"srcimg":'images/zar3.png',"imgindex":3},{"srcimg":'images/zar4.png',"imgindex":4},{"srcimg":'images/zar5.png',"imgindex":5},{"srcimg":'images/zar6.png',"imgindex":6}]};
+
 window.onload=function(){
 var tb1 = document.getElementById("table1ID");
 
@@ -13,30 +15,33 @@ var tb1 = document.getElementById("table1ID");
  
 //document.getElementsByTagName("td")[j].onclick = function() {  return true;};
 		}
-	tds = document.getElementsByTagName("td");
-for( var x=0; x < tds.length; x++ ) {
+tds = document.getElementsByTagName("td");
+for( var x=0; x < 14; x++ ) {
+
 tds[x].onclick = function(){
 	
 this.innerHTML="";
 };
 }
-}
+	document.getElementById('nardy').onmousedown = function() {
+  this.style.position = 'absolute'
 
+  var self = this
 
-function init() {
-	$('.movestone').draggable();
+  document.onmousemove = function(e) {
+    e = e || event
+    fixPageXY(e)  
+    // put ball center under mouse pointer. 25 is half of width/height
+    self.style.left = e.pageX-25+'px' 
+    self.style.top = e.pageY-25+'px' 
+  }
+  this.onmousedown = function() {
+    document.onmousemove = null
+  
+  }
+     this.onmousedown = function(){document.onmousemove = null}
 }
-function GameBord(){
-
 }
-function PlaceStone(){
-
-}
-PlaceStone.prototype.stone=function(){
-
-}
-var placestone=new PlaceStone();
-var obj={"place":[placestone.stone(),placestone.stone(),placestone.stone()]};
 
 
 function whiteStone() {
@@ -52,10 +57,18 @@ var white_stone = new Array();
 	    src.appendChild(img);
         white_stone.push(src);
 	}
-	$(init);
+
 
 }
-
+function fixPageXY(e) {
+	 if (e.pageX == null && e.clientX != null ) {
+var html = document.documentElement("nardy");
+ e.pageX = e.clientX+(html.scrollLeft || 0);
+e.pageX -= html.clientLeft || 0;
+ 
+e.pageY = e.clientY+(html.scrollTop || 0);;
+e.pageY -= html.clientTop || 0;}
+}
 function redStone() {
 
 	var red_stone = new Array();
@@ -67,20 +80,21 @@ function redStone() {
 		img.setAttribute("class", "movestone" );
 	    src.appendChild(img);
         red_stone.push(src);
+        
+
+        
 	}
-	$(init);
+
+
+
 
 
 }
+
 function clickZar(){
-var zar={"zarimg":[{"srcimg":'images/zar1.png',"imgindex":1},{"srcimg":'images/zar2.png',"imgindex":2},{"srcimg":'images/zar3.png',"imgindex":3},{"srcimg":'images/zar4.png',"imgindex":4},{"srcimg":'images/zar5.png',"imgindex":5},{"srcimg":'images/zar6.png',"imgindex":6}]};
 var math=Math.floor((Math.random() * zar.zarimg.length));
 var math1=Math.floor((Math.random() * zar.zarimg.length));
 var zardiv = document.getElementById("zar");
-var img = document.createElement("img");
-img.src=zar.zarimg[math].srcimg;
-var img1 = document.createElement("img");
-img1.src=zar.zarimg[math1].srcimg;;
-zardiv.appendChild(img);		
-zardiv.appendChild(img1);
+document.getElementById('image1').src = zar.zarimg[math].srcimg;
+document.getElementById('image2').src = zar.zarimg[math1].srcimg;
 }
