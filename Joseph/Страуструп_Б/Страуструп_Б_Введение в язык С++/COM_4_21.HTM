@@ -1,0 +1,137 @@
+<html><head>
+<title>2.1 Создание OLE-объектов - Использование COM-технологии в C++Builder</title>
+		    <style type="text/css">
+TH.arial { font-family: Arial, Serif;}
+P.topic { font-family: sans-serif;}
+A.plain { text-decoration: none;}
+A.topic01 { color: #006890;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic02 { color: #099771;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic03 { color: #719709;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic04 { color: #98650A;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic05 { color: #98340A;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic06 { color: #099607;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic07 { color: #9E1215;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic08 { color: #970941;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic09 { color: #950995;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic010 { color: #390A98;
+font-family: sans-serif;
+text-decoration: none;}
+H1 { font-family: sans-serif;}
+H2 { font-family: sans-serif;}
+H3 { font-family: sans-serif;}
+H4 { font-family: sans-serif;}
+H5 { font-family: sans-serif;}
+H6 { font-family: sans-serif;}
+</style>
+</head>
+<body bgcolor="#FFFFFF" link="#006890" vlink="#003860" alink="#800000" text="#000000">
+<table cellspacing=0 cellpadding=0 border=0 background="../../PICTURES/MENU/HEADER0.JPG" width="100%">
+<tr><td align="center">
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="left">
+<img src="../../PICTURES/MENU/LOGO.GIF" width=157 height=53 border=0 alt="Server for Information Technologies">
+</td><td align="right">
+<font size="-2">Сервер поддерживается<br><a class="plain" href="http://www.citmgu.ru">Центром Информационных Технологий</a><br>(095) 932-9212, 932-9213, 939-0783<br>E-mail: <a class=noneline href="mailto:info@citmgu.ru?Subject='From page topic CIT FORUM local copy'">info@citforum.ru</a></font>
+</td></tr>
+</table>
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="left">
+<font size="-1">Сервер содержит море(!) аналитической информации</font>
+</td><td align="right">
+<font size="-1">CIT Forum CD-ROM</font>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<h4><i>2.1 Создание OLE-объектов</i></h4>
+<p align=justify>Компонент TOleContainer позволяет поместить OLE-объект на поверхности формы. Основные свойства этого компонента: AutoActivate - определяет, каким образом активизируется OLE-объект, OleClassName - имя класса OLE-объекта, содержащегося в контейнере. Основные методы: InsertObjectDialog - выводит стандартную диалоговую панель Object для выбора типа объекта или загрузки его из файла, CreateObject - создает OLE-объект,  DestroyObject - уничтожает объект.
+<p align=justify>Создадим простейший	 пример  использования OleContainer.  С этой целью поместим на форму компонент TPanel со свойством Align, равным alClient, на него - компонент TOleContainer, кнопку и главное меню (можно создать в нем один пункт). Панель и меню нужны для отображения инструментальных панелей и меню OLE-серверов, обслуживающих отображаемые в TOleContainer объекты.
+<center>
+<p><img src="../../PICTURES/IT/COM_4/COM_4_07.GIF" width=561 height=422 border=0 alt="орма  с TOleContainer">
+<p><i>Рис.7. Форма  с TOleContainer</i>
+</center>
+<p>Создадим обработчик события, связанный с нажатием на кнопку:
+<pre>
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+OleContainer1->InsertObjectDialog();
+}
+</pre>
+<p align=justify>Запустив приложение и нажав на кнопку, получим диалог для вставки объекта:
+<center>
+<p><img src="../../PICTURES/IT/COM_4/COM_4_08.GIF" width=453 height=269 border=0 alt="Диалог вставки объекта">
+<p><i>Рис.8. Диалог вставки объекта</i>
+</center>
+<p align=justify>В списке перечислены все OLE-серверы, зарегистрированные на данном компьютере.
+<p align=justify>Можно выбрать один из них (например, документ Word). Теперь после двойного щелчка на объекте TOleContainer получим на компоненте TPanel инструментальную панель MS Word, главное меню и сам документ.
+<center>
+<p><img src="../../PICTURES/IT/COM_4/COM_4_09.GIF" width=580 height=501 border=0 alt="Активный объект в  OleContainer<">
+<p><i>Рис.9. Активный объект в  OleContainer</i>
+</center>
+<p align=justify>Если тип объекта, включаемого в TOleContainer, известен заранее, можно использовать метод CreateObject:
+<pre>
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+OleContainer1->CreateObject("Word.Document",True);
+}
+</pre>
+<p align=justify>Второй параметр этого метода указывает, отображать ли объект внутри OleContainer в виде пиктограммы.
+<p align=justify>Модифицируем приложение, добавив еще две кнопки с надписями "Свойства" и "Вставка", и создадим соответствующие обработчики событий:
+<pre>
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+OleContainer1->ObjectPropertiesDialog();
+}
+//--------------------
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+OleContainer1->PasteSpecialDialog();
+}
+</pre>
+<p align=justify>Скомпилируем приложение. Добавим какой-нибудь объект в OLEContainer.
+<p align=justify>Нажав на кнопку "Свойства", получим стандартный диалог с описанием свойств объекта.
+<center>
+<p><img src="../../PICTURES/IT/COM_4/COM_4_10.GIF" width=344 height=344 border=0 alt="Диалог с описанием свойств объекта">
+<p><i>Рис.10. Диалог с описанием свойств объекта</i>
+</center>
+<p>Нажав кнопку "Вставить", получим диалог вставки объекта:
+<center>
+<p><img src="../../PICTURES/IT/COM_4/COM_4_11.GIF" width=453 height=253 border=0 alt="Диалог специальной вставки">
+<p><i>Рис.11. Диалог специальной вставки</i>
+</center>
+<p>Выбрав тип вставки объекта, можем вставить его в  OLEContainer:
+<center>
+<p><font size="-1"><a href="COM_4_20.HTM">Назад</a> |
+ <a href=COM_4.HTM>Содержание</a> |
+ <a href="COM_4_22.HTM">Вперед</a>
+</font></center>
+&nbsp;
+<table cellspacing=0 cellpadding=0 border=0 background="../../PICTURES/MENU/FOOTER0.JPG" width="100%">
+<tr><td align="center">
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="right" valign="top" width="33%">
+<font size="-2">Comments: <a class="plain" href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM local copy'">info@citmgu.ru</a><br>
+Designed by <a class="plain" href="mailto:andrey@novikov.com">Andrey Novikov</a><br>
+Copyright &copy; <a class="plain" href="http://www.citmgu.ru/">CIT</a></font>
+</td></tr>
+</table>
+</td></tr>
+</table></body></html>
