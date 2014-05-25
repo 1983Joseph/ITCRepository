@@ -39,34 +39,28 @@ class Car {
 }
 
 interface carovShrjox {  //cari gagatnerov ancnox interfeys
+
     public void aycelel(Car gagat);//interfejsi miak metod@
 };
 
 class TpelGagat implements carovShrjox {//cari gagatner@ artaberox class
+
     public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
-        //carovShrjox interfeysic
-        Writefile grox = new Writefile();
-        try {
-            grox.write( " "+ gagat.banali);
-        }
-        catch (IOException e) {
-        }
+        ArrayList <Integer> carArray = new ArrayList();//carovShrjox interfeysic
+        carArray.add(gagat.banali);
     }
+
 }
 
 class TesGagat implements carovShrjox {//cari gagatner@ artaberox class
+
     public void aycelel(Car gagat) {     //vor@ implement e anum shrjelu metod@
         System.out.print( " " + gagat.banali );//carovShrjox interfeysic
     }
 };
 
 class Writefile {
-    public void write(String tox) throws IOException {
-        File flt = new File("TreeSort.txt");
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(flt,true)));
-        out.print(tox);
-        out.close();
-    }
+
     public void write(String tox, String filename) throws IOException {
         File flt = new File(filename);
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(flt,true)));
@@ -77,60 +71,74 @@ class Writefile {
 
 class Read {
 
-    public static ArrayList <Integer> read() throws IOException {
-            ArrayList <Integer> nor = new ArrayList();
+    public static ArrayList <Integer> read(String filename) throws IOException {
+        ArrayList <Integer> norArray = new ArrayList();
         try {
-            Scanner scanner = new Scanner(new File("TreeSort.txt"));
+            Scanner scanner = new Scanner(new File(filename));
             while (scanner.hasNextInt()) {
-                nor.add(scanner.nextInt());
+                norArray.add(scanner.nextInt());
             }
             scanner.close();
-            for(int k=0; k < nor.size(); k++) {
-                System.out.println( + nor.get(k));
+            for(int k=0; k < norArray.size(); k++) {
+                System.out.print(" " + norArray.get(k));
             }
         } catch (IOException e) {
             System.out.println("sxal " + e);
         }
-        return nor;
+        return norArray;
     }
 
 };
 
 class Zangvac {
+
     public static int[] massiv(int chap, String filename) {
         Writefile grox = new Writefile();
-        int[] tver = new int[chap];
+        int[] tveriMassiv = new int[chap];
         for (int i = 0; i < chap; i++) {
-            tver[i] = ((int)(Math.random() * chap) - (chap/2));
+            tveriMassiv[i] = ((int)(Math.random() * chap) - (chap/2));
             try {
-                grox.write( " "+ tver[i], filename );
+                grox.write( " "+ tveriMassiv[i], filename );
             }
             catch (IOException e) {
             }
         }
-        return tver;
+        return tveriMassiv;
     }
 }
 
-class TreeSort {          //sortavorox class Treesort
+class TreeSort {//sortavorox class Treesort
+
     public static void main(String args[]) {
-        ArrayList <Integer> nir = new ArrayList();
-        Scanner nor = new Scanner(System.in);
+        ArrayList <Integer> norArray = new ArrayList();
+        Scanner norScanner = new Scanner(System.in);
         System.out.print("mutqagreq massivi chap@: ");
-        int chaps = nor.nextInt();
+        int chaps = norScanner.nextInt();
         System.out.print("mutqagreq filename vortex petq e grvi massiv@: ");
-        String name = nor.next();
-        int[] tiv = Zangvac.massiv(chaps, name);
+        String filename1 = norScanner.next();
+        int[] tiviMassiv = Zangvac.massiv(chaps, filename1);
+        System.out.print("mutqagreq filename vortexic petq e vercrvi massiv@: ");
+        String filename2 = norScanner.next();
         try {
-        nir = Read.read();
+            norArray = Read.read(filename2);
         } catch (IOException e) {
         }
-        Car norCar = new Car(nir.get(0));
-         for (int i = 1; i < nir.size(); i++) {
-             norCar.gagatAvelacnel( new Car(nir.get(i)) );
-         }
-      //   norCar.qayl(new TesGagat());
-    //     norCar.qayl(new TpelGagat());
+        System.out.print("\n#########################################################################");
+        System.out.print("\n");
+        Car norCar = new Car(norArray.get(0));
+        for (int i = 1; i < norArray.size(); i++) {
+            norCar.gagatAvelacnel( new Car(norArray.get(i)) );
+        }
+        Writefile grox = new Writefile();
+        norCar.qayl(new TesGagat());
+        for(int k=0; k < carArray.size(); k++) {
+            try {
+                grox.write( " "+ carArray(k), filename );
+            }
+            catch (IOException e) {
+            }
+        }
+        //norCar.qayl(new TpelGagat());
+        System.out.print("\n");
     }
 }
-//        Car norCar = new Car(((int)(Math.random() * 500000) - 250000));//car classi konstruktori kanch

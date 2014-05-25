@@ -1,6 +1,6 @@
 SOURCE=*.java
 compiler=javac
-output=*.class
+output=*.class *.txt
 classfile=TreeSort.class
 exefile=TreeSort
 interpretator=java
