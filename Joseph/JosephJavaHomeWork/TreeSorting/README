@@ -1,18 +1,21 @@
 -------------------------JosephJavaHomeWork-BinarySearch------------------------
 
---Handznararvac er grel java lezvov cragir vor@ gtnum e nshvac tiv@ nermucvac|
-masivi elementneric.
+--Handznararvac er grel java lezvov tver sortavorox cragir, orinak "TreeSort".
 
---Xndri hnaravor lucman tarberakn e hetevyal cragir@, vorum tvi haytnaberum@ |
-irakanacvac e erku metodov.Araji metod@ iterativ exanakov massivi tarreri mech|
-pnturm e naxapes nermucvac tiv@, isk erkrord exanak@ nuyn xndir@ lucum e rekur-|
-siv metodov.Cragri ashxatanq@ interaktiv e.
+--Xndri hnaravor lucman tarberakn e hetevyal cragir@, vorum ogtvelov binar |
+careri karucman metodneric, porcel em irakanacnel "TreeSort". Cragir@ nax trvac|
+chapov, patahakanoren vercrvac tveric, stexcum e zangvac, vor grancum e dzer |
+nshac file mech. Hajord gorcoxutyamb dzer nshac fileic vercnum e zangvac@ ev |
+dranic stanum e binar car, cari stacman @ntacqum katarvum e sortavorum@.Stacvac|
+stacvac cari elementner@ grancum e dzer koxmic nshvac file mech. Hajordox "run"|hramani kanchi jamanak hnaravor e cragrin tal ir isk sortavorac zangvac@.Cragri|ashxatanqi @ntacqum fileri anunner@ mutqagrelis harkavor e mutqagrel ".txt" |
+tipi anunner.
 --------------------------------------------------------------------------------Inch e harkavor cragir@ ashxatacnelu hamar`
 1.java ev JVM
 2.make
 -------------------------------------------------------------------------------
 INCHPES ASHXATACNEL CRAGIR@`
-1.ajn katalogum vortex gtnvum e "makefile" , qshel "make" hraman@.
-2.nujn katalogum qshel "make run" hraman@.
-3.hetevel artabervor haxordagrutyunnerin, ev katarel hamapatasxan gorcoxutyuner
-4.compilaciajic arajacac "*.class" filer@ jnjelu hamar qshel "make clean" hraman
+1.ayn katalogum vortex gtnvum e "makefile" , qshel "make" hraman@.
+2.nuyn katalogum qshel "make run" hraman@.
+3.hetevel artabervor haxordagrutyunnerin, ev katarel hamapatasxan gorcoxutyuner.
+4.cragri ashxatanqi ardyunqum arajacox "*.class" ev "*.txt" filer@ jnjelu hamar|
+qshel "make clean" hraman@.
