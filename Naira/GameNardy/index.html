@@ -3,11 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>BACKGAMMON</title>
-  <meta name="description" content="">
-  <meta name="author" content="Naira">
- 
-  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -19,32 +15,27 @@
   <div>
       <h1>BACKGAMMON</h1>
      <div>
- 
-  
-    	<div id="player">
-    		<p>PLAYER</p>
-    		
+  <div id="zar"> 
+    	
+    	<img id="image1"/>
+    	<img id="image2"/>
     	</div>
     	<div id="nardy">
     	 <table border="2"  id="table1ID"> </table>
     		
     	</div>
-    <div id="zar"> 
-    	
-    	<img id="image1"/>
-    	<img id="image2"/>
-    	</div>
+    
     	<form>
-    	<input type="button" onclick="redStone()"  value="player2"/>
-    	<input type="button" onclick="whiteStone()" value="player1"/>
-    	<input type="button" onclick="clickZar()" value="zarShow"/>
+ 		<input id="hidebut1" type="button" onclick="redStone()"  value="player2"/>
+        <input id="hidebut2" type="button" onclick="whiteStone()" value="player1"/>
+    	<input id="zarbut" type="button" onclick="clickZar()" value="zarShow"/>
 
     	</form>
      </div>
      
-
-     <p>&copy; Copyright  by Naira</p>
-   
+<footer>
+     <p>&copy; By Naira</p>
+   </footer>
   </div>
 </body>
 
