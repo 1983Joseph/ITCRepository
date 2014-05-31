@@ -6,8 +6,9 @@ body{
 background:#FF9999;
 }
 img{
-margin-top:100px;
-float:right;
+position:absolute;
+top:700px;
+right:0;
 }
 #inID{
 margin-left:35%;

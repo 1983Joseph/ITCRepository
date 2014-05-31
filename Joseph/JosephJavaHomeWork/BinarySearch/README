@@ -1,0 +1,18 @@
+-------------------------JosephJavaHomeWork-BinarySearch------------------------
+
+--Handznararvac er grel java lezvov cragir vor@ gtnum e nshvac tiv@ nermucvac|
+masivi elementneric.
+
+--Xndri hnaravor lucman tarberakn e hetevyal cragir@, vorum tvi haytnaberum@ |
+irakanacvac e erku metodov.Araji metod@ iterativ exanakov massivi tarreri mech|
+pnturm e naxapes nermucvac tiv@, isk erkrord exanak@ nuyn xndir@ lucum e rekur-|
+siv metodov.Cragri ashxatanq@ interaktiv e.
+--------------------------------------------------------------------------------Inch e harkavor cragir@ ashxatacnelu hamar`
+1.java ev JVM
+2.make
+-------------------------------------------------------------------------------
+INCHPES ASHXATACNEL CRAGIR@`
+1.ajn katalogum vortex gtnvum e "makefile" , qshel "make" hraman@.
+2.nujn katalogum qshel "make run" hraman@.
+3.hetevel artabervor haxordagrutyunnerin, ev katarel hamapatasxan gorcoxutyuner
+4.compilaciajic arajacac "*.class" filer@ jnjelu hamar qshel "make clean" hraman

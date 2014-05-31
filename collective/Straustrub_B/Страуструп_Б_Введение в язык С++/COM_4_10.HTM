@@ -1,0 +1,85 @@
+<html><head>
+<title>1. Удаленный запуск серверов автоматизации - Использование COM-технологии в C++Builder</title>
+		    <style type="text/css">
+TH.arial { font-family: Arial, Serif;}
+P.topic { font-family: sans-serif;}
+A.plain { text-decoration: none;}
+A.topic01 { color: #006890;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic02 { color: #099771;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic03 { color: #719709;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic04 { color: #98650A;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic05 { color: #98340A;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic06 { color: #099607;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic07 { color: #9E1215;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic08 { color: #970941;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic09 { color: #950995;
+font-family: sans-serif;
+text-decoration: none;}
+A.topic010 { color: #390A98;
+font-family: sans-serif;
+text-decoration: none;}
+H1 { font-family: sans-serif;}
+H2 { font-family: sans-serif;}
+H3 { font-family: sans-serif;}
+H4 { font-family: sans-serif;}
+H5 { font-family: sans-serif;}
+H6 { font-family: sans-serif;}
+</style>
+</head>
+<body bgcolor="#FFFFFF" link="#006890" vlink="#003860" alink="#800000" text="#000000">
+<table cellspacing=0 cellpadding=0 border=0 background="../../PICTURES/MENU/HEADER0.JPG" width="100%">
+<tr><td align="center">
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="left">
+<img src="../../PICTURES/MENU/LOGO.GIF" width=157 height=53 border=0 alt="Server for Information Technologies">
+</td><td align="right">
+<font size="-2">Сервер поддерживается<br><a class="plain" href="http://www.citmgu.ru">Центром Информационных Технологий</a><br>(095) 932-9212, 932-9213, 939-0783<br>E-mail: <a class=noneline href="mailto:info@citmgu.ru?Subject='From page topic CIT FORUM local copy'">info@citforum.ru</a></font>
+</td></tr>
+</table>
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="left">
+<font size="-1">Сервер содержит море(!) аналитической информации</font>
+</td><td align="right">
+<font size="-1">CIT Forum CD-ROM</font>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<h4>1. Удаленный запуск серверов автоматизации</h4>
+<p align=justify>В предыдущих статьях данного цикла было рассказано о создании серверов и контроллеров автоматизации. Отметим, что серверы автоматизации могут выполняться как в адресном пространстве контроллера (такие серверы называются in-process-серверами и реализуются обычно в виде динамически загружаемых библиотек), так и в собственном адресном пространстве (такие серверы называются out-of-process-серверами и реализуются, как правило, в виде исполняемых файлов).  Приложения MS Office, а также сервер автоматизации, создание которого рассматривалось в одной и предыдущих статей, относятся ко второму типу COM-серверов (такие COM-серверы называются локальными).
+<p align=justify>Отметим, что локальный COM-сервер можно превратить в удаленный (то есть запускаемый на компьютере сети, отличном от компьютера, содержащего контроллер). Такой способ использования серверов особенно удобен в случае, когда сервер требует для своей работы наличия особых ресурсов, недоступных на всех компьютерах, содержащих контроллеры, таких, как дополнительный объем оперативной памяти, уникальное оборудование, дополнительное программное обеспечение, требующее сложной конфигурации, настройки и поддержки (а если обратить внимание на другие механизмы использования сервисов, доступных в сети, отличные от COM, то, возможно,  и другой операционной системы). 
+<p align=justify>Один из часто встречающихся примеров практического использования удаленного доступа - использование удаленного запуска MS Excel, установленного на одном-единственном компьютере локальной сети, для печати отчетов и диаграмм. В этом случае можно снизить требования к ресурсам рабочих станций, содержащих приложения-контроллеры Excel (и сэкономить некоторые средства на покупке нескольких копий Excel). 
+<p align=justify>Второй пример использования удаленного запуска серверов автоматизации, вызывающий в последнее время немалый интерес разработчиков информационных систем - это пример трехзвенной информационной системы с "тонким" клиентом - контроллером автоматизации, и сервером автоматизации (в данном случае он иногда называется сервером приложений), предоставляющим "тонкому" клиенту сервисы, связанные с доступом к данным, содержащимся, в свою очередь, в  какой-либо серверной СУБД. В этом случае, помимо экономии ресурсов компьютеров, содержащих контроллеры, имеется еще одно преимущество, связанное с тем, что для доступа к данным используется программное обеспечение, требующее отдельной установки, сложной настройки и поддержки, такое как клиентская часть серверной СУБД, а также, как правило, библиотека Borland Database Engine, драйверы SQL Links, а иногда и ODBC-драйверы. Если это программное обеспечение используется только сервером, но не используется контроллерами, сопровождение такой системы значительно облегчается.
+<p align=justify>При рассмотрении работы таких серверов возникает естественный вопрос: каким образом контроллер обращается к свойствам и методам объектов, расположенных за пределами его адресного пространства? Для этого следует рассмотреть, каким образом вообще взаимодействуют COM-клиент и COM-сервер.
+<center>
+<p><font size="-1"><a href=COM_4.HTM>Содержание</a> |
+ <a href="COM_4_11.HTM">Вперед</a>
+</font></center>
+&nbsp;
+<table cellspacing=0 cellpadding=0 border=0 background="../../PICTURES/MENU/FOOTER0.JPG" width="100%">
+<tr><td align="center">
+<table cellspacing=0 cellpadding=4 border=0 width="100%" background="">
+<tr><td align="right" valign="top" width="33%">
+<font size="-2">Comments: <a class="plain" href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM local copy'">info@citmgu.ru</a><br>
+Designed by <a class="plain" href="mailto:andrey@novikov.com">Andrey Novikov</a><br>
+Copyright &copy; <a class="plain" href="http://www.citmgu.ru/">CIT</a></font>
+</td></tr>
+</table>
+</td></tr>
+</table></body></html>
