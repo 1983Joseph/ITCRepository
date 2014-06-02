@@ -1,4 +1,26 @@
+var arr = new Array();
 var j = 0;
+function Ship() {
+	this.infoship = {
+		"info" : [{
+			"count" : 1,
+			"size" : 4,
+			"state" : true
+		}, {
+			"count" : 2,
+			"size" : 3,
+			"state" : true
+		}, {
+			"count" : 3,
+			"size" : 2,
+			"state" : true
+		}, {
+			"count" : 4,
+			"size" : 1,
+			"state" : true
+		}]
+	}
+}
 
 function Play() {
 	var tb1 = document.getElementById("table1ID");
@@ -24,16 +46,12 @@ function Play() {
 	document.getElementById("but").style.display = "none";
 	document.getElementById("imgId").style.display = "none";
 	var a = new Ship();
-	a.createShip(1, 4);
-	a.createShip(2, 3);
-	a.createShip(3, 2);
-	a.createShip(4, 1);
-	
-}
-function Ship() {
-	this.state = true;
+	for ( i1 = 0; i1 < 4; i1++) {
+		a.createShip(a.infoship.info[i1].count, a.infoship.info[i1].size);
 
+	}
 }
+
 Ship.prototype.createShip = function(count, sizeship) {
 
 	for (var h = 0; h < count; h++) {
@@ -56,7 +74,7 @@ Ship.prototype.createShip = function(count, sizeship) {
 
 Ship.prototype.clickTable = function(sizeship, y) {
 
-	//arr.push(sizeship);
+	arr.push(sizeship);
 	//alert("sizeship=" + arr);
 	var k = 0;
 	tds = document.getElementsByTagName("td");
@@ -87,9 +105,9 @@ Ship.prototype.clickTable = function(sizeship, y) {
 			var tdId = this.id;
 			var stri = tdId.slice(3, 4);
 			var strj = tdId.slice(4, 5);
-			if (document.getElementById('td0' + stri + strj).innerHTML != 0 && document.getElementById('td0' + (parseInt(stri)+1) + strj).innerHTML == "" ) {
+			if (document.getElementById('td0' + stri + strj).innerHTML != 0) {
 				ll++;
-				if (ll == sizeship) {
+				if (document.getElementById('td0' + stri + strj).innerHTML!="" && document.getElementById('td0' + (parseInt(stri)+1) + strj).innerHTML=="") {
 					this.state = false;
 					alert(this.state);
 				}
@@ -102,5 +120,5 @@ Ship.prototype.clickTable = function(sizeship, y) {
 
 		}
 	}
-	
+
 }
