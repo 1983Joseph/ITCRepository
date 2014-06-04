@@ -1,0 +1,56 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background: #055;
+}
+#game{
+margin-top:35%;
+margin-left:33%;
+border:2px solid;
+border-color:#fff;
+width:400px;
+}
+#game h1{
+text-align:center;
+	color:#fff;
+	
+}
+li {
+	list-style: none;
+}
+td {
+	height: 35px;
+	width: 35px;
+}
+#table1ID {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+#table2ID {
+	position: absolute;
+	top: 100px;
+	right: 100px;
+}
+ul {
+
+	position: absolute;
+	bottom: 0px;
+	left: 33px;
+}
+input {
+	padding: 10px 15px;
+}
+#imgId{
+	margin-top:8%;
+	margin-left:23%;
+	
+}
+#but {
+	width: 80px;
+	margin-top:10px;
+	margin-left:47%;
+	display:none;
+}
